@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "compatillion"
+version = "0.1.0"
+description = "Package for parsing and manipulating Matillion pipelines"
+authors = ["James Baxter <13378695+JSBaxter@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^7.3.7"
+pytest = "^8.2.2"
+pre-commit = "^3.7.1"
+black = "^24.4.2"
+pylint = "^3.2.5"
+flake8 = "^7.1.0"
+mypy = "^1.10.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
