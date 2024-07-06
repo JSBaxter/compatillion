@@ -5,6 +5,7 @@ description = "Package for parsing and manipulating Matillion pipelines"
 authors = ["James Baxter <13378695+JSBaxter@users.noreply.github.com>"]
 readme = "README.md"
 
+
 [tool.poetry.dependencies]
 python = "^3.10"
 
