@@ -50,8 +50,8 @@ class Connector:
     target_id: int
 
 @dataclass(frozen=True)
-class Dag:
-    """Data structure for a Matillion ETL DAG"""
+class Job:
+    """Data structure for a Matillion ETL Job"""
     id: int
     components: Dict[int, Component]
     created: int

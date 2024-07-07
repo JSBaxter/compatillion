@@ -1,18 +1,15 @@
 """Parser for JSON formatted matillion DAGs"""
 import json
-import os
-from .matillion import (
-    ElementValue, 
-    Element, 
-    ComponentParameter, 
-    Component, 
-    ComponentType,
-    Connector,
-    Dag
-)
 from typing import Dict, List, Tuple
 import pprint
 import logging
+from .matillion.base import (
+    ElementValue,
+    Element,
+    ComponentParameter,
+    Component,
+    Job
+)
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +26,7 @@ def load_file(file_path: str) -> Dict:
         FileNotFoundError: If the file does not exist"""
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
-    
+
 def parse_json_dict(json_dict: Dict):
     """Parse a JSON dictionary for DAGs
     
@@ -108,7 +105,7 @@ def parse_component(component: Dict) -> Component:
         }
     )
 
-def parse_dag(dag: Dict) -> Tuple[str, List[Component]]:
+def parse_job(job: Dict) -> Tuple[str, List[Component]]:
     """Parse a DAG
     
     Args:
@@ -116,10 +113,10 @@ def parse_dag(dag: Dict) -> Tuple[str, List[Component]]:
 
     Returns:
         Dag: Dag object"""
-    return Dag(
-        components={ind: parse_component(cmpt) for ind, cmpt in dag['components'].items()},
-        created=dag['created'],
-        id=dag['id'],
-        notes=dag['notes'],
-        variables=dag['variables']
+    return Job(
+        components={ind: parse_component(cmpt) for ind, cmpt in job['components'].items()},
+        created=job['created'],
+        id=job['id'],
+        notes=job['notes'],
+        variables=job['variables']
     )

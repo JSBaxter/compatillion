@@ -966,6 +966,22 @@ standalone = ["Sphinx (>=5)"]
 test = ["pytest"]
 
 [[package]]
+name = "sqlglot"
+version = "25.5.1"
+description = "An easily customizable SQL parser and transpiler"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "sqlglot-25.5.1-py3-none-any.whl", hash = "sha256:80019318158069edc11e6892f74c696e5579a5588da2a0ce11dd7e215a3cb318"},
+    {file = "sqlglot-25.5.1.tar.gz", hash = "sha256:c167eac4536dd6ed202fee5107b76b8cb05db85550a47e8448bf6452c4780158"},
+]
+
+[package.extras]
+dev = ["duckdb (>=0.6)", "maturin (>=1.4,<2.0)", "mypy", "pandas", "pandas-stubs", "pdoc", "pre-commit", "python-dateutil", "ruff (==0.4.3)", "types-python-dateutil", "typing-extensions"]
+rs = ["sqlglotrs (==0.2.8)"]
+
+[[package]]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
@@ -1043,4 +1059,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "4279f4a941888bab3f80006b9f26599a8aadbe80778a7fb0df8f2f5166245695"
+content-hash = "d3ed053047a460fe0175afaf0320847a6636a40944db559c73974e9d31ea120a"
